@@ -29,6 +29,9 @@ app.use("/api/auth", require("./routes/auth"));
 app.use("/api/doctors", require("./routes/doctorRoutes")); // Added doctor routes
 app.use("/api/appointments", require("./routes/appointmentRoutes")); // Added appointment routes
 
+const adminRoutes = require("./routes/adminRoutes");
+app.use("/api/admin", adminRoutes);
+
 // Default Route
 app.get("/", (req, res) => {
   res.send("Welcome to the Healthcare Booking API!");

@@ -6,7 +6,8 @@ const doctorSchema = new mongoose.Schema({
   experience: { type: Number, required: true },
   email: { type: String, required: true },
   availability: { type: [String], required: true }, // Added availability
+  status: { type: String, default: "pending" } 
 });
-
-const Doctor = mongoose.model("Doctor", doctorSchema);
+const Doctor = mongoose.models.Doctor || mongoose.model("Doctor", doctorSchema);
+// const Doctor = mongoose.model("Doctor", doctorSchema);
 module.exports = Doctor;
